@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30 Days Job Guarantee Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f0f4f8;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .form-container h2 {
+      margin-bottom: 25px;
+      color: #0d6efd;
+      text-align: center;
+    }
+    label {
+      font-weight: 500;
+    }
+    input, select {
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    button {
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>30 Days Job Guarantee Plan</h2>
+    <form action="/login/guarantee/plan30" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="plan" value="30 Days">
+      <input type="hidden" name="amount" value="1999">
+
+      <div class="mb-3">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="resume">Resume</label>
+        <input type="file" name="resume" id="resume" class="form-control" placeholder="Paste your resume link">
+      </div>
+
+      <div class="mb-3">
+        <label for="salary">Salary Expectation</label>
+        <input type="text" name="salary" id="salary" class="form-control" placeholder="Enter your expected salary" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Submit & Confirm Plan</button>
+    </form>
+  </div>
+</body>
+</html>

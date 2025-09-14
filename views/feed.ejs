@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Job Requests Feed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f4f6fb;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    }
+    h1 {
+      font-weight: 800;
+      color: #3b82f6;
+      letter-spacing: -1px;
+    }
+    .post-card {
+      background: #ffffff;
+      border-radius: 1.25rem;
+      box-shadow: 0 6px 32px rgba(56, 189, 248, 0.16);
+      border: 1.5px solid #ecf1f7;
+      padding: 28px;
+      margin-bottom: 24px;
+      transition: box-shadow 0.25s;
+    }
+    .post-card:hover {
+      box-shadow: 0 12px 32px rgba(59, 130, 246, 0.18);
+    }
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 22px;
+    }
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .post-name {
+      font-weight: 600;
+      margin-bottom: 0;
+      font-size: 1.18rem;
+      color: #353a40;
+    }
+    .post-location {
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .post-time {
+      font-size: 12px;
+      color: #a0aec0;
+    }
+    .no-posts {
+      color: #8da2fb;
+      font-style: italic;
+      margin-top: 32px;
+      font-size: 1.08rem;
+    }
+    /* Responsive changes */
+    @media (max-width: 700px){
+      .post-card{padding:20px;}
+      h1{font-size:1.6rem;}
+      .avatar{width:40px;height:40px;font-size:16px;}
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="text-center mb-5">🌟 Free Job Requests Feed</h1>
+  <% if(posts.length === 0){ %>
+    <p class="text-center no-posts">No job requests yet.</p>
+  <% } %>
+  <% posts.forEach(post => { %>
+    <div class="post-card">
+      <div class="post-header">
+        <div class="avatar"><%= post.name.charAt(0).toUpperCase() %></div>
+        <div>
+          <p class="post-name"><%= post.name %></p>
+          <p class="post-location"><%= post.location %> • <span class="post-time"><%= new Date(post.created_at).toLocaleString() %></span></p>
+        </div>
+      </div>
+      <p style="color:#23272f;font-size:1.05rem;"><%= post.job_request %></p>
+    </div>
+  <% }) %>
+</div>
+</body>
+</html>

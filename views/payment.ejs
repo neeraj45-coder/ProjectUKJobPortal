@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Complete Your Payment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link 
+    rel="preconnect" href="https://fonts.googleapis.com" />
+  <link 
+    rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" 
+    rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-6 bg-gray-100">
+  <div class="bg-white shadow-lg rounded-xl max-w-4xl w-full p-10 border border-gray-300 flex flex-col md:flex-row gap-12">
+    
+    <!-- Left side: QR code -->
+    <div class="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-lg p-8 w-full md:w-1/2">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+        Scan to Pay
+      </h2>
+      <img 
+        src="<%= qrImage %>" 
+        alt="UPI QR Code" 
+        class="w-64 h-64 rounded-md shadow-inner" />
+      <p class="text-gray-600 mt-6 text-center max-w-xs leading-relaxed">
+        Open any UPI app (GPay, PhonePe, Paytm, etc.) and scan the code to pay ₹<%= amount %>.
+      </p>
+    </div>
+
+    <!-- Right side: Payment details -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center space-y-8">
+      <header class="text-center md:text-left">
+        <h1 class="text-3xl font-semibold text-gray-900 mb-2 tracking-wide">
+          Complete Your Payment
+        </h1>
+        <p class="text-gray-600 text-sm uppercase tracking-widest font-medium">
+          Secure & Reliable
+        </p>
+      </header>
+
+      <section class="bg-gray-50 p-6 rounded-md border border-gray-200 space-y-6 shadow-sm">
+        <div class="flex justify-between text-gray-700 font-semibold text-lg">
+          <span>Plan:</span> <span><%= plan %></span>
+        </div>
+        <div class="flex justify-between text-gray-700 font-semibold text-lg">
+          <span>Name:</span> <span><%= name %></span>
+        </div>
+        <div class="flex justify-between text-gray-700 font-semibold text-lg">
+          <span>Email:</span> <span><%= email %></span>
+        </div>
+        <div class="flex justify-between text-gray-900 text-xl font-bold border-t border-gray-300 pt-4">
+          <span>Amount:</span> <span>₹<%= amount %></span>
+        </div>
+      </section>
+
+      <button
+        onclick="alert('Please scan the QR with your UPI app to complete payment.')"
+        class="w-full py-3 rounded-md bg-blue-700 hover:bg-blue-800 font-semibold text-white transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+      >
+        ✅ I Have Paid
+      </button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- Tailwind CSS CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for a clean, modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* Use the Inter font family defined in the Google Fonts link */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-gray-800 min-h-screen">
+
+  <div class="container mx-auto px-4 py-8 sm:py-12">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-3 text-gray-900">Welcome to Your Dashboard</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need, right at your fingertips. Explore plans or get in touch about a new project.</p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+      <!-- Left Column: Job Guarantee Plans -->
+      <div class="flex flex-col items-center justify-center text-center p-8 bg-white rounded-3xl border border-gray-200 shadow-xl h-full">
+        <div class="mb-6">
+          <span class="inline-block p-4 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg">
+            <i class="fas fa-rocket text-4xl text-white"></i>
+          </span>
+        </div>
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">Explore Job Guarantee Plans</h2>
+        <p class="text-gray-600 mb-8 max-w-sm">Take the next step in your career with our exclusive job guarantee programs. Secure your future today.</p>
+        <a href="http://localhost:3000/login/gurrenty" class="btn-main bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-purple-500/40 transform hover:-translate-y-1 transition-all duration-300">
+          View Plans
+        </a>
+      </div>
+
+      <!-- Right Column: Website Query Form -->
+      <div class="query-card bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-xl">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-gray-900">Need a Website?</h2>
+            <p class="text-gray-600 mt-2">For Hotels, Schools, Shops & more. Drop your details below!</p>
+        </div>
+        
+        <form action="/website-query" method="POST" class="space-y-5">
+          <div>
+            <label for="name" class="sr-only">Full Name</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-50 text-gray-800 border border-gray-300 rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" placeholder="Full Name" required>
+          </div>
+          <div>
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-50 text-gray-800 border border-gray-300 rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" placeholder="Email Address" required>
+          </div>
+          <div>
+            <label for="phone" class="sr-only">Phone</label>
+            <input type="text" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-50 text-gray-800 border border-gray-300 rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" placeholder="Phone Number" required>
+          </div>
+          <div>
+            <label for="query" class="sr-only">Your Query</label>
+            <textarea id="query" name="qury" class="w-full px-4 py-3 bg-gray-50 text-gray-800 border border-gray-300 rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" rows="4" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold py-3 px-4 rounded-xl hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-500 shadow-lg hover:shadow-purple-500/40 transform hover:-translate-y-1 transition-all duration-300">
+              Submit Query <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
